@@ -2,18 +2,31 @@ package aTaskHabr.basics;
 
 public class Task2 {
 
-    public static void main (String[] args){
+   public static void main (String[] args){
 
-        Method();
+        Method(10);
 
     }
 
-    public static void Method() {
-        int a = 10;
-        int[] array = new int[a];
-        for (int i = 0; i < array.length; i++) {
+    public static void Method(int arrayl) {
+        int a;
+        int[] array = new int[arrayl];
+        for (int i=0; i<array.length; i++) {
             array[i] = (int) (Math.random() * 100);
             System.out.println(array[i]);
+        }
+        System.out.println("--");
+        for (int j=0;j<array.length;j++){
+            for (int q=0;q<array.length;q++){
+                if (array[j] < array[q]){
+                    a = array[q];
+                    array[q] = array[j];
+                    array[j] = a;
+                }
+            }
+        }
+        for (int g=0;g<array.length;g++){
+            System.out.println(array[g]);
         }
     }
 }
